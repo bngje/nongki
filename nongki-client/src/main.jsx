@@ -10,8 +10,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/landing" element={<Landing />} /> 
-        <Route path="/" element={<Login />} />
+        <Route path="/" element={<Landing />} /> 
+        <Route path="/login" element={<Login />} />
         <Route path="/order" element={<Order />} />
         <Route path="/map-vip" element={<MapVIP />} />
       </Routes>
