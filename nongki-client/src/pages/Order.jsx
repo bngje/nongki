@@ -1,9 +1,10 @@
 import { useState } from 'react';
-import './Order.css';
-import logo from './assets/logo.png';
+import { Link } from 'react-router-dom';
+import '../Styles/Order.css';
+import logo from '../assets/logo.png';
 
 function Order() {
-    return (
+    return (    
         <div className='order-page'>
             <div className='order-content-warpper'>
                 <img src={logo} alt="Nongki Logo" className='logo-order' />
@@ -88,7 +89,7 @@ function Order() {
                         </p>
                     </div>
 
-                    <button className='btn-check'>Check</button>
+                    <Link to='/map-vip' className='btn-check'>Check</Link>
                 </div>
             </div>
         </div>

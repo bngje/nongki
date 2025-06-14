@@ -2,8 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Landing from './pages/Landing';
-import Login from './Login';
-import Order from './Order';
+import Login from './pages/Login';
+import Order from './pages/Order';
+import MapVIP from './pages/MapVIP';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -12,6 +13,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/landing" element={<Landing />} /> 
         <Route path="/" element={<Login />} />
         <Route path="/order" element={<Order />} />
+        <Route path="/map-vip" element={<MapVIP />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

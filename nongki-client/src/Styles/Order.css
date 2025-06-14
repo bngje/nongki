@@ -39,7 +39,7 @@ html, body {
 
 .card-order {
     position: relative;
-    background-image: url('./assets/card-header-order.png');
+    background-image: url('../assets/card-header-order.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -153,6 +153,7 @@ html, body {
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin-top: 20px;
+    text-decoration: none;
 }
 
 .btn-check:hover {
