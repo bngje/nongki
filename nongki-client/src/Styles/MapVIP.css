@@ -1,85 +1,110 @@
-#root {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 2rem;
-    text-align: center;
-}
-
-html,
-body {
-    height: 100%;
-    margin: 0;
-}
-
-.logo-map-vip {
-    height: 30px;
-    display: block;
-    margin-bottom: 20px;
-    align-self: flex-start;
-}
-
-.map-vip-page {
+.nonvip-container {
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    overflow: auto;
     background-color: #1a1a1a;
     color: white;
     padding: 20px;
     font-family: Arial, sans-serif;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100%;
-    overflow: auto;
-}
-
-.map-vip-content-wrapper {
-    position: relative;
-    width: 100%;
-    max-width: 800px;
-    margin: auto;
-}
-
-.map-absolute-wrapper {
-    position: relative;
-    width: 800px;
-    height: 850px;
-    background-color: #f5f5f5;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-}
-
-.seat-block {
-    position: absolute;
-    background-color: #059669;
-    color: white;
-    width: 50px;
-    height: 40px;
-    border-radius: 6px;
-    font-size: 14px;
     text-align: center;
-    line-height: 40px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: transform 0.1s ease;
 }
 
-.seat-block:hover {
-    transform: scale(1.05);
+.map-header {
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    width: 900px;
 }
 
-.seat-block.selected {
-    background-color: #f97316;
+.logo-map {
+    height: 30px;
 }
 
-.door-label {
-    position: absolute;
-    font-weight: bold;
-    font-size: 14px;
-    color: #333;
-}
-
-.compass-block {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
+.map-title {
     font-size: 24px;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    text-align: center;
+}
+
+.spacer {
+    flex: 1;
+}
+
+.map-area {
+    position: relative;
+    width: 900px;
+    height: 800px;
+    margin: 0 auto;
+    border: 2px solid white;
+    border-radius: 10px;
+    background-color: #1a1a1a;
+    margin-bottom: 70px;
+}
+
+.desk {
+    position: absolute;
+    background-color: #ccc;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.desk:hover {
+    background-color: #aaa;
+}
+
+.desk.selected {
+    background-color: #FEB600;
+    color: black;
+}
+
+.door-line-wrapper {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    width: 900px;
+    height: 20px;
+    gap: 4px;
+}
+
+.door-line {
+    position: absolute;
+    height: 2px;
+    background-color: white;
+}
+
+.door-text {
+    position: absolute;
+    background-color: #1a1a1a;
+    color: white;
+    padding: 0 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+    z-index: 2;
+}
+
+.vertical-cut {
+    position: absolute;
+    width: 2px;
+    background-color: white;
+}
+
+.compass-icon {
+    position: absolute;
+    bottom: 30px;
+    right: 20px;
+    width: 100px;
+    height: 100px;
+    z-index: 10;
 }
