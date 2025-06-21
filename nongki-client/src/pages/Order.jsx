@@ -89,7 +89,7 @@ function Order() {
                         </p>
                     </div>
 
-                    <Link to='/map-vip' className='btn-check'>Check</Link>
+                    <Link to='/map' className='btn-check'>Check</Link>
                 </div>
             </div>
         </div>
