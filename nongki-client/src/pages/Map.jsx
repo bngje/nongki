@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import '../Styles/MapVip.css';
+import '../Styles/Map.css';
 import logo from '../assets/logo.png';
 import compas from '../assets/compas.png';
+import { useNavigate } from 'react-router-dom';
 
 const desks = [
     { id: 'A1', top: 20, left: 20, vertical: false },
@@ -80,52 +81,73 @@ const desks = [
     { id: 'L3', top: 750, left: 240, vertical: false },
 ];
 
-function MapNonVip() {
-    const [selectedDesk, setSelectedDesk] = useState(null);
+function MapVip() {
+    const [selectedDesk, setSelectedDesks] = useState([]);
 
     const toggleSelect = (deskId) => {
-        setSelectedDesk(prev => prev === deskId ? null : deskId);
+        setSelectedDesks(prevSelectedDesks => {
+            const newSelectedDesks = prevSelectedDesks.includes(deskId)
+                ? prevSelectedDesks.filter(id => id !== deskId)
+                : [...prevSelectedDesks, deskId];
+            return newSelectedDesks;
+        });
     };
+
+    const navigate = useNavigate();
+
+    const handleNext = () => {
+        if (selectedDesk.length === 0) return;
+        navigate('/confirm', { state: { selectedDesk } });
+    }
 
     return (
         <div className="nonvip-container">
             <div className="map-header">
                 <img src={logo} alt="Nongki Logo" className="logo-map" />
                 <div className="spacer" />
-                <h2 className="map-title">NON VIP MAPS</h2>
+                <h2 className="map-title">Choose Your Desk(s)</h2>
                 <div className="spacer" />
             </div>
 
-            <div className="map-area">
-                {desks.map((desk) => (
-                    <div
-                        key={desk.id}
-                        className={`desk ${selectedDesk === desk.id ? 'selected' : ''}`}
-                        onClick={() => toggleSelect(desk.id)}
-                        style={{
-                            top: desk.top,
-                            left: desk.left,
-                            width: desk.vertical ? 30 : 70,
-                            height: desk.vertical ? 70 : 30,
-                        }}
-                    >
-                        {desk.id}
+            <div className="map-warpper">
+                <div className="map-area">
+                    {desks.map((desk) => (
+                        <div
+                            key={desk.id}
+                            className={`desk ${selectedDesk.includes(desk.id) ? 'selected' : ''}`}
+                            onClick={() => toggleSelect(desk.id)}
+                            style={{
+                                top: desk.top,
+                                left: desk.left,
+                                width: desk.vertical ? 30 : 70,
+                                height: desk.vertical ? 70 : 30,
+                            }}
+                        >
+                            {desk.id}
+                        </div>
+                    ))}
+                    <div className="door-line-wrapper" style={{ top: 150, left: 0 }}>
+                        <div className="door-line" style={{ top: 0, left: 0, width: 900 }}></div>
+                        <span className="door-text" style={{ top: -5, left: 440 }}>door</span>
                     </div>
-                ))}
-                <div className="door-line-wrapper" style={{ top: 150, left: 0 }}>
-                    <div className="door-line" style={{ top: 0, left: 0, width: 900 }}></div>
-                    <span className="door-text" style={{ top: -5, left: 440 }}>door</span>
+                    <div className="door-line-wrapper" style={{ top: 630, left: 0 }}>
+                        <div className="door-line" style={{ top: 100, left: 300, width: 0 }}></div>
+                        <div className="vertical-cut" style={{ top: 10, left: 380, height: 160 }}></div>
+                        <span className="door-text" style={{ top: 3, left: 440 }}>door</span>
+                        <div className="door-line" style={{ top: 10, left: 380, width: 520 }}></div>
+                    </div>
+                    <img src={compas} alt="Compass" className="compass-icon" />
                 </div>
-                <div className="door-line-wrapper" style={{ top: 630, left: 0 }}>
-                    <div className="door-line" style={{ top: 100, left: 300, width: 0 }}></div>
-                    <div className="vertical-cut" style={{ top: 10, left: 380, height: 160 }}></div>
-                    <span className="door-text" style={{ top: 3, left: 440 }}>door</span>
-                    <div className="door-line" style={{ top: 10, left: 380, width: 520 }}></div>
-                </div>
-            <img src={compas} alt="Compass" className="compass-icon" />
+                <button to='/confirm'
+                    className="next-button"
+                    onClick={handleNext}
+                    disabled={selectedDesk.length === 0}
+                >
+                    Next
+                </button>
             </div>
         </div>
     );
 }
 
-export default MapNonVip;
+export default MapVip;
