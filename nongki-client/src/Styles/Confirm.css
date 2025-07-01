@@ -163,3 +163,219 @@ body {
 .btn-back:hover {
     background-color: #777;
 }
+
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.modal-content {
+    background-color: #f7f8fa;
+    border-radius: 12px;
+    /* Mengurangi lebar maksimum modal */
+    max-width: 380px;
+    width: 90%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    color: #333;
+}
+
+.modal-header {
+    background-color: #1a1a1a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 18px; /* Sedikit pengurangan padding */
+}
+
+.modal-logo {
+    height: 22px; /* Sedikit pengurangan ukuran logo */
+}
+
+.modal-close-btn {
+    background: none;
+    border: none;
+    font-size: 26px; /* Sedikit pengurangan ukuran font tombol close */
+    font-weight: lighter;
+    color: #888;
+    cursor: pointer;
+}
+
+.modal-body {
+    padding: 18px; /* Sedikit pengurangan padding */
+}
+
+.payment-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 6px; /* Sedikit pengurangan margin */
+}
+
+.payment-amount p {
+    margin: 0;
+    font-size: 13px; /* Sedikit pengurangan ukuran font */
+    color: #555;
+}
+
+.payment-amount h2 {
+    margin: 3px 0 0 0; /* Sedikit pengurangan margin */
+    font-size: 22px; /* Sedikit pengurangan ukuran font */
+    color: #000;
+}
+
+.payment-timer {
+    background-color: #ffebee;
+    color: #c62828;
+    padding: 5px 10px; /* Sedikit pengurangan padding */
+    border-radius: 14px; /* Sedikit pengurangan radius */
+    font-size: 13px; /* Sedikit pengurangan ukuran font */
+    font-weight: 500;
+}
+
+.order-id {
+    font-size: 13px; /* Sedikit pengurangan ukuran font */
+    color: #777;
+    margin: 0 0 0px 0; /* Sedikit pengurangan margin */
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 14px; /* Sedikit pengurangan padding */
+}
+
+.payment-title {
+    font-size: 15px; /* Sedikit pengurangan ukuran font */
+    margin: 0 0 10px 0; /* Sedikit pengurangan margin */
+    color: #555;
+}
+
+.payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Sedikit pengurangan gap */
+}
+
+.payment-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px; /* Sedikit pengurangan padding */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.payment-option:hover {
+    border-color: #aaa;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.payment-option span:first-child {
+    font-weight: 600;
+}
+
+.payment-option span:last-child {
+    font-size: 18px; /* Sedikit pengurangan ukuran font */
+    color: #888;
+}
+
+.modal-footer {
+    padding: 14px 18px; /* Sedikit pengurangan padding */
+    background-color: #fff;
+    text-align: center;
+    font-size: 11px; /* Sedikit pengurangan ukuran font */
+    color: #999;
+    border-top: 1px solid #e5e5e5;
+}
+
+/* === PAYMENT VIEW STYLES START === */
+
+.payment-view-container {
+    padding-top: 14px; /* Sedikit pengurangan padding */
+}
+
+.payment-view-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px; /* Sedikit pengurangan padding */
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.payment-view-header h3 {
+    margin: 0;
+    font-size: 16px; /* Sedikit pengurangan ukuran font */
+}
+
+.payment-method-logo {
+    height: 13px; /* Sedikit pengurangan ukuran logo */
+}
+
+.payment-code-img {
+    display: block;
+    width: 50%;
+    max-width: 220px; /* Mengurangi ukuran maksimum gambar QR code */
+    margin: 5px auto; /* Sedikit pengurangan margin */
+    border-radius: 8px;
+}
+
+.how-to-pay {
+    display: block;
+    text-align: center;
+    margin-bottom: 10px; /* Sedikit pengurangan margin */
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px; /* Sedikit pengurangan ukuran font */
+}
+
+.how-to-pay:hover {
+    text-decoration: underline;
+}
+
+.payment-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Sedikit pengurangan gap */
+}
+
+.btn-payment {
+    width: 100%;
+    padding: 10px; /* Sedikit pengurangan padding */
+    border-radius: 8px;
+    font-size: 14px; /* Sedikit pengurangan ukuran font */
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid #ccc;
+}
+
+.btn-download {
+    background-color: #fff;
+    color: #333;
+}
+
+.btn-status {
+    background-color: #28a745; /* Green color */
+    color: #fff;
+    border-color: #28a745;
+}
+
+.btn-change-method {
+    background: none;
+    border: none;
+    color: #007bff;
+    margin-top: 0px; /* Sedikit pengurangan margin */
+    padding: 0px; /* Sedikit pengurangan padding */
+    font-weight: 500;
+    font-size: 13px; /* Sedikit pengurangan ukuran font */
+}
