@@ -23,6 +23,8 @@
 
 .logo-map {
     height: 30px;
+    display: block;
+    align-self: flex-start;
 }
 
 .map-title {
@@ -121,14 +123,11 @@
     text-decoration: none;
     display: block;
     font-size: 16px;
-    margin-top: 10px;
-    margin-bottom: 50px;
     cursor: pointer;
     border: none;
     border-radius: 8px;
     transition: background-color 0.3s ease;
-    margin-left: auto;
-    margin-right: 0;
+    margin: 0;
 }
 
 .next-button:hover {
@@ -138,4 +137,30 @@
 .next-button:disabled {
     background-color: #ccc;
     cursor: not-allowed;
+}
+
+.map-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 900px;
+    margin: 20px auto 50px auto;
+    gap: 20px;
+}
+
+.back-button {
+    background-color: #FEB600;
+    color: white;
+    padding: 10px 30px;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #9a7400;
 }

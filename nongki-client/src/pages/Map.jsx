@@ -103,7 +103,9 @@ function MapVip() {
     return (
         <div className="nonvip-container">
             <div className="map-header">
-                <img src={logo} alt="Nongki Logo" className="logo-map" />
+                <a href="/" target="_blank" rel="noopener noreferrer">
+                    <img src={logo} alt="Nongki Logo" className='logo-order' />
+                </a>
                 <div className="spacer" />
                 <h2 className="map-title">Choose Your Desk(s)</h2>
                 <div className="spacer" />
@@ -138,13 +140,21 @@ function MapVip() {
                     </div>
                     <img src={compas} alt="Compass" className="compass-icon" />
                 </div>
-                <button to='/confirm'
-                    className="next-button"
-                    onClick={handleNext}
-                    disabled={selectedDesk.length === 0}
-                >
-                    Next
-                </button>
+                <div className="map-actions">
+                    <button
+                        className="back-button"
+                        onClick={() => navigate(-1)}
+                    >
+                        Back
+                    </button>
+                    <button
+                        className="next-button"
+                        onClick={handleNext}
+                        disabled={selectedDesk.length === 0}
+                    >
+                        Next
+                    </button>
+                </div>
             </div>
         </div>
     );
