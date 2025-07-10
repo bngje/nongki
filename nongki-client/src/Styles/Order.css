@@ -17,7 +17,7 @@ html, body {
     top: 0;
     left: 0;
     background-color: black;
-    overflow: auto;
+    overflow: hidden;
 }
 
 .order-content-warpper {
@@ -30,11 +30,41 @@ html, body {
     align-items: center;
 }
 
+.header-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
 .logo-order {
     height: 30px;
     display: block;
-    margin-bottom: 20px;
     align-self: flex-start;
+}
+
+.btn-history {
+    background-color: #FEB600;
+    color: black;
+    padding: 8px 12px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-history:hover {
+    background-color: #9a7400;
+}
+
+.cart-icon {
+    font-size: 20px;
 }
 
 .card-order {
@@ -158,4 +188,57 @@ html, body {
 
 .btn-check:hover {
     background-color: #9a7400;
+}
+
+.history-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.history-modal-content {
+    background-color: rgb(27, 27, 27);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.history-modal-content h2 {
+    margin-top: 0;
+    color: #FEB600;
+    margin-bottom: 20px;
+}
+
+.history-modal-content p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.history-modal-close-btn {
+    background-color: #FEB600;
+    color: black;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: lighter;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.history-modal-close-btn:hover {
+    background-color: #9a7400;
+    color: white;
 }

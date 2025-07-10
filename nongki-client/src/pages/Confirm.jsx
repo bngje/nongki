@@ -5,12 +5,14 @@ import logo from '../assets/logo.png';
 import qrisLogo from '../assets/qrisLogo.png';
 import qrCode from '../assets/qrbayar.png';
 import gopayLogo from '../assets/gopayLogo.png';
+import { FaShoppingCart } from 'react-icons/fa';
 
 function Order() {
     const navigate = useNavigate();
     const [showModal, setshowModal] = useState(false);
     const [timeLeft, setTimeLeft] = useState(10 * 60); // 10 minutes in seconds
     const [modalView, setModalView] = useState('selection'); // 'selection' or 'qris'
+    const [showHistoryModal, setShowHistoryModal] = useState(false);
 
     useEffect(() => {
         if (showModal && timeLeft > 0) {
@@ -27,6 +29,10 @@ function Order() {
         setshowModal(true);
     };
 
+    const toggleHistoryModal = () => {
+        setShowHistoryModal(!showHistoryModal);
+    };
+
     const formatTime = (seconds) => {
         const minutes = Math.floor(seconds / 60);
         const remainingSeconds = seconds % 60;
@@ -36,7 +42,12 @@ function Order() {
     return (
         <div className='order-page'>
             <div className='order-content-warpper'>
-                <img src={logo} alt="Nongki Logo" className='logo-order' />
+                <div className='header-container'>
+                    <img src={logo} alt="Nongki Logo" className='logo-order' />
+                    <button className='btn-history' onClick={toggleHistoryModal}>
+                        <FaShoppingCart className='cart-icon' />
+                    </button>
+                </div>
 
                 <div className='card-order'>
                     <h3 className='title-order'>Confirm Order</h3>
@@ -167,6 +178,15 @@ function Order() {
                         <div className="modal-footer">
                             <p>Powered by Your Payment Gateway</p>
                         </div>
+                    </div>
+                </div>
+            )}
+            {showHistoryModal && (
+                <div className='history-modal-overlay' onClick={toggleHistoryModal}>
+                    <div className='history-modal-content' onClick={(e) => e.stopPropagation()}>
+                        <h2>Booking History</h2>
+                        <p>No booking history available.</p>
+                        <button className='history-modal-close-btn' onClick={toggleHistoryModal}>Close</button>
                     </div>
                 </div>
             )}

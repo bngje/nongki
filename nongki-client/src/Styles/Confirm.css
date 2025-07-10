@@ -18,7 +18,7 @@ body {
     top: 0;
     left: 0;
     background-color: black;
-    overflow: auto;
+    overflow: hidden;
 }
 
 .order-content-warpper {
@@ -31,11 +31,42 @@ body {
     align-items: center;
 }
 
+.header-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
 .logo-order {
     height: 30px;
     display: block;
-    margin-bottom: 20px;
     align-self: flex-start;
+}
+
+.btn-history {
+    background-color: #FEB600;
+    color: black;
+    padding: 8px 12px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+.btn-history:hover {
+    background-color: #9a7400;
+}
+
+.cart-icon {
+    font-size: 20px;
 }
 
 .card-order {
@@ -180,7 +211,6 @@ body {
 .modal-content {
     background-color: #f7f8fa;
     border-radius: 12px;
-    /* Mengurangi lebar maksimum modal */
     max-width: 380px;
     width: 90%;
     overflow: hidden;
@@ -195,79 +225,79 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 14px 18px; /* Sedikit pengurangan padding */
+    padding: 14px 18px;
 }
 
 .modal-logo {
-    height: 22px; /* Sedikit pengurangan ukuran logo */
+    height: 22px;
 }
 
 .modal-close-btn {
     background: none;
     border: none;
-    font-size: 26px; /* Sedikit pengurangan ukuran font tombol close */
+    font-size: 26px;
     font-weight: lighter;
     color: #888;
     cursor: pointer;
 }
 
 .modal-body {
-    padding: 18px; /* Sedikit pengurangan padding */
+    padding: 18px;
 }
 
 .payment-details {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 6px; /* Sedikit pengurangan margin */
+    margin-bottom: 6px;
 }
 
 .payment-amount p {
     margin: 0;
-    font-size: 13px; /* Sedikit pengurangan ukuran font */
+    font-size: 13px;
     color: #555;
 }
 
 .payment-amount h2 {
-    margin: 3px 0 0 0; /* Sedikit pengurangan margin */
-    font-size: 22px; /* Sedikit pengurangan ukuran font */
+    margin: 3px 0 0 0;
+    font-size: 22px;
     color: #000;
 }
 
 .payment-timer {
     background-color: #ffebee;
     color: #c62828;
-    padding: 5px 10px; /* Sedikit pengurangan padding */
-    border-radius: 14px; /* Sedikit pengurangan radius */
-    font-size: 13px; /* Sedikit pengurangan ukuran font */
+    padding: 5px 10px;
+    border-radius: 14px;
+    font-size: 13px;
     font-weight: 500;
 }
 
 .order-id {
-    font-size: 13px; /* Sedikit pengurangan ukuran font */
+    font-size: 13px;
     color: #777;
-    margin: 0 0 0px 0; /* Sedikit pengurangan margin */
+    margin: 0 0 0px 0;
     border-bottom: 1px solid #e5e5e5;
-    padding-bottom: 14px; /* Sedikit pengurangan padding */
+    padding-bottom: 14px;
 }
 
 .payment-title {
-    font-size: 15px; /* Sedikit pengurangan ukuran font */
-    margin: 0 0 10px 0; /* Sedikit pengurangan margin */
+    font-size: 15px;
+    margin: 0 0 10px 0;
     color: #555;
 }
 
 .payment-options {
     display: flex;
     flex-direction: column;
-    gap: 8px; /* Sedikit pengurangan gap */
+    gap: 8px;
 }
 
 .payment-option {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 14px; /* Sedikit pengurangan padding */
+    padding: 14px;
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -285,58 +315,56 @@ body {
 }
 
 .payment-option span:last-child {
-    font-size: 18px; /* Sedikit pengurangan ukuran font */
+    font-size: 18px;
     color: #888;
 }
 
 .modal-footer {
-    padding: 14px 18px; /* Sedikit pengurangan padding */
+    padding: 14px 18px;
     background-color: #fff;
     text-align: center;
-    font-size: 11px; /* Sedikit pengurangan ukuran font */
+    font-size: 11px;
     color: #999;
     border-top: 1px solid #e5e5e5;
 }
 
-/* === PAYMENT VIEW STYLES START === */
-
 .payment-view-container {
-    padding-top: 14px; /* Sedikit pengurangan padding */
+    padding-top: 14px;
 }
 
 .payment-view-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 10px; /* Sedikit pengurangan padding */
+    padding-bottom: 10px;
     border-bottom: 1px solid #e5e5e5;
 }
 
 .payment-view-header h3 {
     margin: 0;
-    font-size: 16px; /* Sedikit pengurangan ukuran font */
+    font-size: 16px;
 }
 
 .payment-method-logo {
-    height: 13px; /* Sedikit pengurangan ukuran logo */
+    height: 13px;
 }
 
 .payment-code-img {
     display: block;
     width: 50%;
-    max-width: 220px; /* Mengurangi ukuran maksimum gambar QR code */
-    margin: 5px auto; /* Sedikit pengurangan margin */
+    max-width: 220px;
+    margin: 5px auto;
     border-radius: 8px;
 }
 
 .how-to-pay {
     display: block;
     text-align: center;
-    margin-bottom: 10px; /* Sedikit pengurangan margin */
+    margin-bottom: 10px;
     color: #007bff;
     text-decoration: none;
     font-weight: 500;
-    font-size: 14px; /* Sedikit pengurangan ukuran font */
+    font-size: 14px;
 }
 
 .how-to-pay:hover {
@@ -346,14 +374,14 @@ body {
 .payment-actions {
     display: flex;
     flex-direction: column;
-    gap: 10px; /* Sedikit pengurangan gap */
+    gap: 10px;
 }
 
 .btn-payment {
     width: 100%;
-    padding: 10px; /* Sedikit pengurangan padding */
+    padding: 10px;
     border-radius: 8px;
-    font-size: 14px; /* Sedikit pengurangan ukuran font */
+    font-size: 14px;
     font-weight: 600;
     cursor: pointer;
     border: 1px solid #ccc;
@@ -365,7 +393,7 @@ body {
 }
 
 .btn-status {
-    background-color: #28a745; /* Green color */
+    background-color: #28a745;
     color: #fff;
     border-color: #28a745;
 }
@@ -374,8 +402,9 @@ body {
     background: none;
     border: none;
     color: #007bff;
-    margin-top: 0px; /* Sedikit pengurangan margin */
-    padding: 0px; /* Sedikit pengurangan padding */
+    margin-top: 0px;
+    padding: 0px;
     font-weight: 500;
-    font-size: 13px; /* Sedikit pengurangan ukuran font */
+    font-size: 13px;
 }
+

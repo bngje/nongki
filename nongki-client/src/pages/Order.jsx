@@ -2,12 +2,24 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../Styles/Order.css';
 import logo from '../assets/logo.png';
+import { FaShoppingCart } from 'react-icons/fa';
 
 function Order() {
-    return (    
+    const [showHistoryModal, setShowHistoryModal] = useState(false);
+
+    const toggleHistoryModal = () => {
+        setShowHistoryModal(!showHistoryModal);
+    };
+
+    return (
         <div className='order-page'>
             <div className='order-content-warpper'>
-                <img src={logo} alt="Nongki Logo" className='logo-order' />
+                <div className='header-container'>
+                    <img src={logo} alt="Nongki Logo" className='logo-order' />
+                    <button className='btn-history' onClick={toggleHistoryModal}>
+                        <FaShoppingCart className='cart-icon' />
+                    </button>
+                </div>
                 <div className='card-order'>
                     <h3 className='title-order'>Booking Space</h3>
                 </div>
@@ -92,6 +104,16 @@ function Order() {
                     <Link to='/map' className='btn-check'>Check</Link>
                 </div>
             </div>
+
+            {showHistoryModal && (
+                <div className='history-modal-overlay' onClick={toggleHistoryModal}>
+                    <div className='history-modal-content' onClick={(e) => e.stopPropagation()}>
+                        <h2>Booking History</h2>
+                        <p>No booking history available.</p>
+                        <button className='history-modal-close-btn' onClick={toggleHistoryModal}>Close</button>
+                    </div>
+                </div>
+            )}
         </div>
     )
 }
