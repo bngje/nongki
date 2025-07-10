@@ -143,7 +143,7 @@ function MapVip() {
                 <div className="map-actions">
                     <button
                         className="back-button"
-                        onClick={() => navigate(-1)}
+                        onClick={() => navigate('/order')}
                     >
                         Back
                     </button>
