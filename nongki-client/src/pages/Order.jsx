@@ -15,7 +15,9 @@ function Order() {
         <div className='order-page'>
             <div className='order-content-warpper'>
                 <div className='header-container'>
-                    <img src={logo} alt="Nongki Logo" className='logo-order' />
+                    <a href="/" target="_blank" rel="noopener noreferrer">
+                        <img src={logo} alt="Nongki Logo" className='logo-order' />
+                    </a>
                     <button className='btn-history' onClick={toggleHistoryModal}>
                         <FaShoppingCart className='cart-icon' />
                     </button>
