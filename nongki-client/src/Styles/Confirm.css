@@ -113,6 +113,7 @@ body {
     max-width: 925px;
     width: 100%;
     margin: 40px auto;
+    margin-top: 5px;
     font-family: Arial, sans-serif;
 }
 
@@ -351,8 +352,8 @@ body {
 
 .payment-code-img {
     display: block;
-    width: 50%;
-    max-width: 220px;
+    width: 40%;
+    max-width: 100px;
     margin: 5px auto;
     border-radius: 8px;
 }
@@ -408,3 +409,195 @@ body {
     font-size: 13px;
 }
 
+.payment-success-view {
+    padding: 0px;
+    text-align: center;
+}
+
+.success-title {
+    font-size: 1.5em;
+    color: #28a745;
+    /* Green */
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+.success-message {
+    font-size: 1 em;
+    color: #555;
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+.success-details {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px dashed #eee;
+    font-size: 0.76em;
+}
+
+.detail-row:last-child {
+    border-bottom: none;
+}
+
+.detail-row span {
+    color: #666;
+}
+
+.detail-row strong {
+    color: #333;
+    font-weight: 600;
+}
+
+.follow-up-message {
+    font-size: 0.7em;
+    color: #777;
+    margin-bottom: 30px;
+}
+
+.btn-back-to-home {
+    background-color: #007bff;
+    /* Blue */
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: auto;
+    /* Agar tidak 100% lebar */
+}
+
+.btn-back-to-home:hover {
+    background-color: #0056b3;
+}
+
+
+/* Payment Failure/Expired View */
+.payment-failure-view {
+    padding: 20px;
+    text-align: center;
+}
+
+.failure-title {
+    font-size: 1.8em;
+    color: #dc3545;
+    /* Red */
+    margin-bottom: 15px;
+}
+
+.failure-message {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.failure-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn-try-again,
+.btn-contact-support {
+    width: 100%;
+    /* Atau sesuaikan */
+}
+
+.btn-try-again {
+    background-color: #ffc107;
+    /* Yellow */
+    color: #333;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-try-again:hover {
+    background-color: #e0a800;
+}
+
+.btn-contact-support {
+    background-color: #6c757d;
+    /* Gray */
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-contact-support:hover {
+    background-color: #5a6268;
+}
+
+/* Sesuaikan juga gaya untuk .payment-actions agar lebih fleksibel */
+/* Misalnya, ubah display menjadi flex-wrap jika ingin lebih dari 1 kolom */
+.payment-actions {
+    display: flex;
+    flex-wrap: wrap;
+    /* Untuk mengatur jika tombol terlalu banyak */
+    justify-content: center;
+    /* Pusatkan tombol */
+    gap: 10px;
+    /* Jarak antar tombol */
+    margin-top: 20px;
+}
+
+/* Untuk tombol .btn-payment */
+.btn-payment {
+    /* Gaya dasar yang sudah ada, tambahkan */
+    flex: 1 1 auto;
+    /* Memungkinkan tombol tumbuh dan menyusut */
+    min-width: 150px;
+    /* Minimal lebar tombol */
+}
+
+/* Pastikan logo dan QR Code juga punya ukuran yang konsisten di modal*/
+.modal-logo {
+    max-height: 40px;
+    /* Sesuaikan tinggi logo di modal header */
+    margin-right: auto;
+    /* Untuk push close button ke kanan */
+}
+
+.payment-code-img {
+    max-width: 200px;
+    /* Maksimal lebar QR code */
+    height: auto;
+    margin: 20px auto;
+    /* Pusatkan dan berikan jarak */
+    display: block;
+    /* Agar margin auto berfungsi */
+    border: 1px solid #eee;
+    /* Sedikit border */
+    border-radius: 8px;
+}
+
+.modal-close-btn {
+    background: none;
+    border: none;
+    font-size: 1.8em;
+    cursor: pointer;
+    color: #666;
+    padding: 0;
+}
+
+.modal-close-btn:hover {
+    color: #333;
+}
