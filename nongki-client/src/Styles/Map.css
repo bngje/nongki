@@ -1,0 +1,166 @@
+.nonvip-container {
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    overflow: auto;
+    background-color: #1a1a1a;
+    color: white;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.map-header {
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    width: 900px;
+}
+
+.logo-map {
+    height: 30px;
+    display: block;
+    align-self: flex-start;
+}
+
+.map-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    text-align: center;
+}
+
+.spacer {
+    flex: 1;
+}
+
+.map-warpper {
+    width: 900px;
+    margin: 0 auto;
+}
+
+.map-area {
+    position: relative;
+    width: 900px;
+    height: 800px;
+    margin: 0 auto;
+    border: 2px solid white;
+    border-radius: 10px;
+    background-color: #1a1a1a;
+    margin-bottom: 0px;
+}
+
+.desk {
+    position: absolute;
+    background-color: #ccc;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.desk:hover {
+    background-color: #aaa;
+}
+
+.desk.selected {
+    background-color: #FEB600 !important;
+    color: black;
+}
+
+.door-line-wrapper {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    width: 900px;
+    height: 20px;
+    gap: 4px;
+}
+
+.door-line {
+    position: absolute;
+    height: 2px;
+    background-color: white;
+}
+
+.door-text {
+    position: absolute;
+    background-color: #1a1a1a;
+    color: white;
+    padding: 0 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+    z-index: 2;
+}
+
+.vertical-cut {
+    position: absolute;
+    width: 2px;
+    background-color: white;
+}
+
+.compass-icon {
+    position: absolute;
+    bottom: 30px;
+    right: 20px;
+    width: 100px;
+    height: 100px;
+    z-index: 10;
+}
+
+.next-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 30px;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    margin: 0;
+}
+
+.next-button:hover {
+    background-color: #45a049;
+}
+
+.next-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.map-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 900px;
+    margin: 20px auto 50px auto;
+    gap: 20px;
+}
+
+.back-button {
+    background-color: #FEB600;
+    color: white;
+    padding: 10px 30px;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #9a7400;
+}
