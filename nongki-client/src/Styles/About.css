@@ -44,7 +44,7 @@ font-family: 'Poppins', Arial, sans-serif;
   gap: 24px;
   overflow-x: auto;
   padding-bottom: 8px;
-  justify-content: flex-start;
+  justify-content: center;
   scrollbar-width: thin;
   scrollbar-color: #FFC107 #eee;
   margin-top: 40px;
