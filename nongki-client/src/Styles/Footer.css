@@ -108,11 +108,6 @@ align-content: left;
   margin-top: 6px;
 }
 
-#root {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
 body, html {
   margin: 0;
   padding: 0;
