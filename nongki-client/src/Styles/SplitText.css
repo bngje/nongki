@@ -1,0 +1,4 @@
+.split-part {
+    will-change: transform, opacity;
+    display: inline-block;
+}

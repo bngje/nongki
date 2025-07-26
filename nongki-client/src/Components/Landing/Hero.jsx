@@ -1,46 +1,63 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../../Styles/Hero.css";
+import HeroSlider from "../HeroSlider";
+import SplitText from "../SplitText";
+import AnimatedContent from "../AnimatedContent";
 
-const Hero = () => (
-  <div className="home-root">
-    {/* Navbar */}
-    <div className="navbar">
-      <div className="logo">
-        <span className="logo-icon" />
-        Nongki
+const Hero = () => {
+  return (
+    <section className="hero-section">
+      <div className="hero-container">
+        <div className="hero-left">
+          <h1>
+            <SplitText
+              text="Tempat Kerja Inspiratif?"
+              type="chars"
+              className="hero-title"
+              from={{ y: 40, opacity: 0 }}
+              to={{ y: 0, opacity: 1, duration: 1, ease: 'back.out(1.7)', stagger: 0.04 }}
+            />
+            <SplitText
+              text="Nongki solusinya"
+              type="chars"
+              className="highlight"
+              from={{ y: 40, opacity: 0 }}
+              to={{ y: 0, opacity: 1, duration: 1, ease: 'back.out(1.7)', stagger: 0.04, delay: 1.6 }}
+            />
+          </h1>
+          <p>
+            <SplitText
+              text="Solusi coworking dan meeting room terdepan. Temukan ruang terbaik untuk fokus dan kolaborasi."
+              type="chars"
+              className="highlight"
+              from={{ y: 40, opacity: 0 }}
+              to={{ y: 0, opacity: 1, duration: 1, ease: 'back.out(1.7)', stagger: 0, delay: 2.6 }}
+            />
+          </p>
+          <AnimatedContent animation={{
+            from: { y: 30, opacity: 0 },
+            to: { y: 0, opacity: 1, duration: 0.8, ease: 'back.out(1.7)', delay: 3.5 },
+          }}
+            className="btn-wrap">
+            <Link to="/login" className="cta-btn">Pesan Sekarang</Link>
+          </AnimatedContent>
+        </div>
+        <div className="hero-right">
+          <AnimatedContent
+            animation={{
+              from: { y: 40, opacity: 0 },
+              to: { y: 0, opacity: 1, duration: 1, delay: 0.5, ease: 'back.out(1.7)'}
+            }}
+          >
+            <div className="hero-image-wrapper">
+              <HeroSlider />
+            </div>
+          </AnimatedContent>
+        </div>
       </div>
-      <div className="nav-menu">
-        <a href="#">Beranda</a>
-        <a href="#location">Lokasi</a>
-        <a href="#product">Produk</a>
-        <a href="#footer">Kontak</a>
-      </div>
-      <Link to="/login" className="booking-btn">Pesan</Link>
-    </div>
-    {/* Main Content */}
-    <div className="container">
-      <div className="left-content">
-        <h1>
-          LOREM IPSUM
-          <span className="highlight">DOLOR SIT AMET</span>
-        </h1>
-        <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book.
-        </p>
-        <Link to="/login" className="cta-btn">Pesan Sekarang</Link>
-      </div>
-      <div className="right-content">
-        <img
-          src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80"
-          alt="Office View"
-        />
-      </div>
-    </div>
-  </div>
+    </section>
+  );
+};
 
-);
 export default Hero;
