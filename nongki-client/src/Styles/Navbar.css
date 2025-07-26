@@ -1,0 +1,157 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    position: sticky;
+    width: 100vw;
+    z-index: 100;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.logo-image {
+    height: 28px;
+}
+
+.hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 25px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 101;
+    position: relative;
+}
+
+.hamburger-menu .bar {
+    width: 100%;
+    height: 3px;
+    background-color: #333;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.hamburger-menu .bar:nth-child(1).open {
+    transform: translateY(6px) rotate(45deg);
+}
+
+.hamburger-menu .bar:nth-child(2).open {
+    opacity: 0;
+}
+
+.hamburger-menu .bar:nth-child(3).open {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0px;
+    right: -100%;
+    width: 80%;
+    height: 100vh;
+    background: #fff;
+    padding-top: 80px;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.4);
+    transition: right 0.3s ease;
+    z-index: 99;
+    align-items: flex-start;
+    gap: 25px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.nav-menu.active {
+    right: 0;
+}
+
+.nav-menu a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: color 0.2s;
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.nav-menu a:last-child {
+    border-bottom: none;
+}
+
+.nav-menu a:hover {
+    color: #FFC107;
+}
+
+.booking-btn.desktop-only {
+    display: none;
+}
+
+.booking-btn.mobile-only {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 12px 0;
+    margin-top: 20px;
+    font-size: 1rem;
+    background: #FEB600;
+    color: #222;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+@media (min-width: 768px) {
+    .navbar {
+        position: fixed;
+        padding: 10px 50px;
+        justify-content: space-between;
+    }
+
+    .hamburger-menu {
+        display: none;
+    }
+
+    .nav-menu {
+        position: static;
+        flex-direction: row;
+        height: auto;
+        width: auto;
+        padding: 0 40px;
+        box-shadow: none;
+        gap: 32px;
+        align-items: center;
+        left: auto;
+        height: 48px;
+        overflow-y: visible;
+    }
+
+    .nav-menu a {
+        font-size: 1rem;
+        padding: 0;
+        border-bottom: none;
+    }
+
+    .booking-btn.desktop-only {
+        display: block;
+        padding: 8px 32px;
+        font-size: 0.9rem;
+        background: #FFC107;
+        color: #222;
+        border-radius: 20px;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    .booking-btn.mobile-only {
+        display: none;
+    }
+}
