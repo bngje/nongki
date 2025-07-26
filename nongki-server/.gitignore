@@ -22,6 +22,9 @@ bin/
 *.iws
 *.iml
 *.ipr
+.vs
+.vs/
+.vs/*
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/

@@ -1,11 +1,13 @@
 package me.app.nongki.controller;
 
 import jakarta.validation.Valid;
-import me.app.nongki.model.User;
-import me.app.nongki.service.UserService;
+import me.app.nongki.entity.User;
+import me.app.nongki.service.AuthService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.HashMap;
 
 import static me.app.nongki.util.ResponseUtil.response;
 
@@ -14,25 +16,25 @@ import static me.app.nongki.util.ResponseUtil.response;
 @ResponseBody
 public class AuthController {
 
-    private final UserService userService;
+  private final AuthService authService;
 
-    public AuthController(UserService userService) {
-        this.userService = userService;
-    }
+  public AuthController(AuthService authService) {
+    this.authService = authService;
+  }
 
-    @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping(value = "/register")
-    public ResponseEntity<?> register(@Valid @RequestBody User user) {
-            userService.register(user.getName(),user.getPassword());
-            return ResponseEntity.status(HttpStatus.CREATED)
-                    .body(response(true,"User registered successfully", null));
-    }
+  @ResponseStatus(HttpStatus.CREATED)
+  @PostMapping(value = "/register")
+  public ResponseEntity<?> register(@Valid @RequestBody User user) {
+    authService.register(user.getEmail(), user.getName(), user.getPassword(), user.getNomorTelepon());
+    return ResponseEntity.status(HttpStatus.CREATED)
+        .body(response(true, "User registered successfully", null));
+  }
 
-    @PostMapping(value = "/login")
-    public ResponseEntity<?> login(@Valid @RequestBody User user) {
-        userService.login(user.getName(), user.getPassword());
-        return ResponseEntity.status(HttpStatus.ACCEPTED).body(
-                response(true, "Login successfully", null)
-        );
-    }
+  @PostMapping(value = "/login")
+  public ResponseEntity<?> login(@Valid @RequestBody User user) {
+    HashMap<String, String> tokenResponse = authService.authenticate(user.getEmail(), user.getPassword());
+    return ResponseEntity.status(HttpStatus.OK).body(
+        response(true, "Login successfully", tokenResponse)
+    );
+  }
 }
