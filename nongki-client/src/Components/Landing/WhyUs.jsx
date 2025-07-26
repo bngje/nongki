@@ -1,6 +1,8 @@
 import React from "react";
 import "../../Styles/WhyUs.css";
 import { FaWifi, FaPrint, FaSyncAlt, FaSmoking, FaSmokingBan, FaMosque, FaSnowflake, FaClock } from "react-icons/fa";
+import SplitText from "../SplitText";
+import AnimatedContent from "../AnimatedContent";
 
 const features = [
   {
@@ -47,20 +49,62 @@ const features = [
 
 const WhyUs = () => (
   <section className="whyus-section">
-    <h2 className="whyus-title">
-      Kenapa harus pilih <span className="whyus-highlight">NONGKI ?</span>
-    </h2>
-    <div className="whyus-cards">
-      {features.map((item, idx) => (
-        <div className="whyus-card" key={idx}>
-          {item.icon}
-          <div className="whyus-card-title">{item.title}</div>
-          <div className="whyus-card-desc">{item.desc}</div>
-        </div>
-      ))}
-    </div>
-    <div className="whyus-footer">
-      <span className="whyus-highlight">NONGKI</span> MENYEDIAKAN SETIAP KEBUTUHAN PRODUKTIFITAS ANDA
+    <div className="whyus-container">
+      <div className="whyus-title">
+        <SplitText
+          text="Kenapa Harus"
+          type="chars"
+          className=""
+          from={{ y: 40, opacity: 0 }}
+          to={{ y: 0, opacity: 1, duration: 1, ease: 'back.out(1.7)', stagger: 0.04, delay: 0.5 }}
+          scrollTriggerOptions={{ start: 'top 90%' }}
+        />
+        <SplitText
+          text="Nongki?"
+          type="chars"
+          className="whyus-highlight"
+          from={{ y: 40, opacity: 0 }}
+          to={{ y: 0, opacity: 1, duration: 1, ease: 'back.out(1.7)', stagger: 0.04, delay: 1.3 }}
+          scrollTriggerOptions={{ start: 'top 90%' }}
+        />
+      </div>
+      <div className="whyus-cards">
+        {features.map((item, idx) => (
+          <AnimatedContent
+            key={idx}
+            animation={{
+              from: { y: 40, opacity: 0 },
+              to: { y: 0, opacity: 1, duration: 0.7, ease: 'back.out(1)', delay: idx * 0.15 }
+            }}
+            scrollTriggerOptions={{ start: 'top 95%' }}
+            className="whyus-card-animated"
+          >
+            <div className="whyus-card">
+              {item.icon}
+              <div className="whyus-card-title">{item.title}</div>
+              <div className="whyus-card-desc">{item.desc}</div>
+            </div>
+          </AnimatedContent>
+        ))}
+      </div>
+      <div className="whyus-footer">
+        <SplitText
+          text="NONGKI"
+          type="chars"
+          className="whyus-highlight"
+          from={{ y: 40, opacity: 0 }}
+          to={{ y: 0, opacity: 1, duration: 1, ease: 'back.out(1.7)', stagger: 0, delay: 0.5 }}
+          scrollTriggerOptions={{ start: 'top 95%' }}
+        />
+        <SplitText
+          text="MENYEDIAKAN SETIAP KEBUTUHAN PRODUKTIFITAS ANDA"
+          type="chars"
+          className=""
+          from={{ y: 40, opacity: 0 }}
+          to={{ y: 0, opacity: 1, duration: 1, ease: 'back.out(1.7)', stagger: 0, delay: 0.5 }}
+          scrollTriggerOptions={{ start: 'top 95%' }}
+        />
+      </div>
     </div>
   </section>
 );
