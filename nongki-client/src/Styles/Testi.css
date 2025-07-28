@@ -2,10 +2,13 @@
 
 .testimoni-section {
   font-family: 'Poppins', Arial, sans-serif;
-  max-width: 1200px;
-  margin: 190px auto 0 auto;
-  padding: 0 16px;
+  padding: 80px 0;
   text-align: center;
+}
+
+.testimoni-container {
+  margin: auto 80px;
+  max-width: 1200px;
 }
 
 .testimoni-title {
@@ -18,32 +21,35 @@
 
 .testimoni-list {
   display: flex;
-  gap: 32px;
+  gap: 18px;
   justify-content: center;
-  flex-wrap: wrap; /* Changed to wrap to allow cards to stack */
+  flex-wrap: wrap;
   align-items: stretch;
 }
 
 .testimoni-card {
   background: #fff;
   border-radius: 10px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
   padding: 32px 28px 24px 28px;
-  max-width: 340px;
-  min-width: 280px;
-  flex: 1 1 300px; /* Added flex-grow, flex-shrink, and basis for better distribution */
+  max-width: 286px;
+  min-width: 160px;
+  height: 360px;
+  max-height: 360px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  border: solid 1px #cdcdcd;
 }
 
 .testimoni-card:hover {
-  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+  transform: translateY(-2px);
 }
 
 .testimoni-text {
-  font-size: 1.05rem;
+  font-size: 0.9rem;
   color: #222;
   margin-bottom: 28px;
   line-height: 1.6;
@@ -73,35 +79,41 @@
 
 @media (max-width: 900px) {
   .testimoni-list {
-    flex-direction: column; /* Stacks cards vertically on smaller screens */
-    align-items: center; /* Centers the stacked cards */
+    flex-direction: column;
+    align-items: center;
     gap: 24px;
   }
+
   .testimoni-card {
-    max-width: 90%; /* Adjust max-width for better fit on smaller screens */
-    width: 100%; /* Ensures card takes full available width */
-    min-width: unset; /* Remove min-width to allow shrinking on very small screens */
+    max-width: 90%;
+    width: 100%;
+    min-width: unset;
   }
+
   .testimoni-section {
-    margin: 90px auto 0 auto; /* Adjusted top margin for mobile */
+    margin: 90px auto 0 auto;
   }
+
   .testimoni-title {
-    font-size: 1.8rem; /* Slightly smaller title on mobile */
+    font-size: 1.8rem;
   }
 }
 
 @media (max-width: 480px) {
   .testimoni-card {
-    padding: 24px 20px 18px 20px; /* Reduced padding for smaller cards */
+    padding: 24px 20px 18px 20px;
   }
+
   .testimoni-text {
-    font-size: 0.95rem; /* Smaller text on very small screens */
-    min-height: unset; /* Allow text height to be natural */
+    font-size: 0.95rem;
+    min-height: unset;
   }
+
   .testimoni-name {
-    font-size: 1rem; /* Slightly smaller name font */
+    font-size: 1rem;
   }
+
   .testimoni-role {
-    font-size: 0.9rem; /* Slightly smaller role font */
+    font-size: 0.9rem;
   }
 }
