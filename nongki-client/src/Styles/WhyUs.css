@@ -3,11 +3,11 @@
 .whyus-section {
   font-family: 'Poppins', Arial, sans-serif;
   text-align: center;
-  margin: 150px auto;
+  margin: 80px 0;
 }
 
 .whyus-container {
-  margin: auto;
+  margin: auto ;
 }
 
 .whyus-title {
@@ -29,7 +29,7 @@
   flex-wrap: wrap;
   gap: 18px;
   justify-content: center;
-  margin-bottom: 36px;
+  margin-bottom: 30px;
 }
 
 .whyus-card {
@@ -72,7 +72,6 @@
 }
 
 .whyus-footer {
-  margin-top: 32px;
   font-size: 1.15rem;
   font-weight: 700;
   letter-spacing: 0.5px;
