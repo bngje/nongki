@@ -6,7 +6,7 @@ import WhyUs from '../Components/Landing/WhyUs';
 import Product from '../Components/Landing/Product';
 import Location from '../Components/Landing/Location';
 import Testi from '../Components/Landing/Testi';
-import FAQ from "../Components/Landing/faq";
+import FAQ from "../Components/Landing/Faq";
 import Footer from "../Components/Landing/Footer";
 
 const Landing = () => (
