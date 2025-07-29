@@ -8,11 +8,11 @@
 
 .location-container {
   margin: auto 80px;
-  max-width: 1200px;
 }
 
 .location-row {
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: 48px;
   border-radius: 12px;
