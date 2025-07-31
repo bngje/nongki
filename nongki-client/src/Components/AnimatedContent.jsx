@@ -11,10 +11,11 @@ const AnimatedContent = ({
     scrollTriggerOptions = null,
 }) => {
     const ref = useRef();
+    const hasAnimated = useRef(false);
 
     useEffect(() => {
         const el = ref.current;
-        if (!el) return;
+        if (!el || hasAnimated.current) return;
 
         const inner = el.querySelector('.animated-content-inner') || el;
         const toOptions = scrollTriggerOptions
@@ -22,7 +23,8 @@ const AnimatedContent = ({
             : animation.to;
 
         gsap.fromTo(inner, animation.from, toOptions);
-    }, [animation, scrollTriggerOptions]);
+        hasAnimated.current = true;
+    }, []); // Empty dependency array to only run once
 
     return (
         <div ref={ref} className={`animated-content ${className}`}>
