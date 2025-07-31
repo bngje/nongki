@@ -63,7 +63,7 @@ const SplitText = ({
         }, el);
 
         return () => ctx.revert();
-    }, [text, from, to, type, scrollTriggerOptions]);
+    }, []); // Only run once on mount
 
     return <div ref={elRef} className={className}></div>;
 };
