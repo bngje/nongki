@@ -66,16 +66,17 @@ const FAQ = () => {
         />
         </h2>
         <div className="faq-list">
-          <div className="faq-column">
-            {leftFaqs.map((item, idx) => (
-              <AnimatedContent
-                animation={{
-                  from: { y: 40, opacity: 0 },
-                  to: { y: 0, opacity: 1, duration: 0.5, delay: 1 }
-                }}
-                scrollTriggerOptions={{ start: 'top 110%' }}
-              >
+          <AnimatedContent
+            animation={{
+              from: { y: 40, opacity: 0 },
+              to: { y: 0, opacity: 1, duration: 0.5, delay: 1 }
+            }}
+            scrollTriggerOptions={{ start: 'top 110%' }}
+          >
+            <div className="faq-column">
+              {leftFaqs.map((item, idx) => (
                 <Accordion
+                  key={`left-${idx}`}
                   className="custom-accordion"
                   expanded={expanded === `left-${idx}`}
                   onChange={handleChange(`left-${idx}`)}
@@ -90,19 +91,20 @@ const FAQ = () => {
                     {item.answer}
                   </AccordionDetails>
                 </Accordion>
-              </AnimatedContent>
-            ))}
-          </div>
-          <div className="faq-column">
-            {leftFaqs.map((item, idx) => (
-              <AnimatedContent
-                animation={{
-                  from: { y: 40, opacity: 0 },
-                  to: { y: 0, opacity: 1, duration: 0.5, delay: 1 }
-                }}
-                scrollTriggerOptions={{ start: 'top 110%' }}
-              >
+              ))}
+            </div>
+          </AnimatedContent>
+          <AnimatedContent
+            animation={{
+              from: { y: 40, opacity: 0 },
+              to: { y: 0, opacity: 1, duration: 0.5, delay: 1.2 }
+            }}
+            scrollTriggerOptions={{ start: 'top 110%' }}
+          >
+            <div className="faq-column">
+              {rightFaqs.map((item, idx) => (
                 <Accordion
+                  key={`right-${idx}`}
                   className="custom-accordion"
                   expanded={expanded === `right-${idx}`}
                   onChange={handleChange(`right-${idx}`)}
@@ -117,9 +119,9 @@ const FAQ = () => {
                     {item.answer}
                   </AccordionDetails>
                 </Accordion>
-              </AnimatedContent>
-            ))}
-          </div>
+              ))}
+            </div>
+          </AnimatedContent>
         </div>
       </div>
     </section>
