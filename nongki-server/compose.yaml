@@ -1,6 +1,6 @@
 services:
   db:
-    image: mysql
+    image: kyanoe/nongki-server:latest
     restart: always
     volumes:
         - ./db:/var/lib/mysql
