@@ -4,17 +4,16 @@ body {
     margin: 0;
 }
 
-.order-page {
+.confirm-page {
     height: 100vh;
     width: 100%;
     position: fixed;
     top: 0;
     left: 0;
-    background-color: black;
-    overflow: hidden;
+    background-color: #141414;
 }
 
-.order-content-warpper {
+.confirm-content-warpper {
     width: 80%;
     max-width: 1000px;
     margin: 0 auto;

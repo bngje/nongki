@@ -83,8 +83,8 @@ function Confirm() {
 
 
     return (
-        <div className='order-page'>
-            <div className='order-content-warpper'>
+        <div className='confirm-page'>
+            <div className='confirm-content-warpper'>
                 <div className='header-container'>
                     <a href="/" target="_blank" rel="noopener noreferrer">
                         <img src={logo} alt="Nongki Logo" className='logo-order' />
@@ -118,16 +118,6 @@ function Confirm() {
                                 <div className="label">Number of Desk</div>
                                 <div className="colon">:</div>
                                 <div className="value">G1, G2, G3, G4, ,G5, G6</div>
-                            </div>
-
-                            <div className="confirm-item">
-                                <div className="label">Payment Method</div>
-                                <div className="colon">:</div>
-                                <select className="confirm-select value">
-                                    <option>Cash</option>
-                                    <option>QRIS</option>
-                                    <option>Transfer</option>
-                                </select>
                             </div>
                         </div>
 
