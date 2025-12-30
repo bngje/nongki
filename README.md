@@ -1,6 +1,6 @@
 # 🏢 Nongki - Workspace Booking Platform
 
-[![Live Preview](https://img.shields.io/badge/Live%20Preview-Click%20Here-success?style=for-the-badge&logo=vercel&logoColor=white)](https://bngje.github.io/nongki/)
+[![Live Preview](https://img.shields.io/badge/Live%20Preview-Click%20Here-success?style=for-the-badge&logo=vercel&logoColor=white)](https://nongki-psi.vercel.app/)
 [![React.js](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
 
 **Nongki** adalah platform berbasis web modern untuk memudahkan pengguna dalam memesan ruang kerja (*workspace*) yang nyaman dan produktif. Proyek ini dibangun menggunakan **React.js** dengan fokus pada antarmuka yang menarik dan pengalaman pengguna (UX) yang mulus.
